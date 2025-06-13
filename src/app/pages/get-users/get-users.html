@@ -1,24 +1,22 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">FirstName</th>
-      <th scope="col">LastName</th>
-      <th scope="col">Age</th>
-      <th scope="col">Email</th>
+      <th scope="col">Mal_id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Url</th>
+      <th scope="col">Count</th>
     </tr>
   </thead>
   <tbody>
-    @for(user of users; track user.id) {
+    @for (anime of animes; track anime.mal_id) {
       <tr>
-        <td>{{ user.Id }}</td>
-        <td>{{ user.FirstName }}</td>
-        <td>{{ user.LastName }}</td>
-        <td>{{ user.Age }}</td>
-        <td>{{ user.Email }}</td>
+        <td>{{ anime.mal_id }}</td>
+        <td>{{ anime.name }}</td>
+        <td>{{ anime.url }}</td>
+        <td>{{ anime.count }}</td>
       </tr>
     }
   </tbody>
 </table>
 
-<button (click)="getAllStudents()">Get All Students</button>
+<button (click)="getAllAnimes()">Get All Students</button>

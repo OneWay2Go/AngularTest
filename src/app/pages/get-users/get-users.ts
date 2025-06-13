@@ -4,29 +4,21 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-get-users',
-  imports: [HttpClient, Observable],
+  imports: [],
   templateUrl: './get-users.html',
   styleUrl: './get-users.css'
 })
 
-class Student 
-{
-  public Id!: number;
-  public FirstName!: string;
-  public LastName!: string;
-  public Age!: number;
-  public Email!: string;
-}
-
 export class GetUsers {
-  users: Student[] = [];
+  animes: any[] = [];
 
   constructor(private http: HttpClient) {  }
 
-  getAllStudents(){
-    this.http.get<Student[]>('https://localhost:7136/api/Students')
+  getAllAnimes() {
+    this.http.get<any>('https://api.jikan.moe/v4/genres/anime')
       .subscribe(data => {
-        this.users = data;
+      this.animes = data.data; // Assign the inner data array
+      console.log(this.animes); // Move console.log here to wait for data
       });
   }
 }
