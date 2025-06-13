@@ -1,0 +1,16 @@
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Id</span>
+  <input type="number" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="addon-wrapping"
+         [(ngModel)]="Id">
+</div>
+
+<br>
+
+<button (click)="getContactById()">Get Contact</button>
+
+<h3>Contact Details</h3>
+<p><strong>Id:</strong> {{ contact.id }}</p>
+<p><strong>Name:</strong> {{ contact.firstName }}</p>
+<p><strong>Email:</strong> {{ contact.lastName }}</p>
+<p><strong>Phone:</strong> {{ contact.phoneNumber }}</p>
+<p><strong>Phone:</strong> {{ contact.email }}</p>
